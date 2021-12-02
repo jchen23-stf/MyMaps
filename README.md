@@ -1,6 +1,4 @@
 
-** there is currently a bug in the code that prevents the code from compiling - I am in the process of fixing it 
-
 ## *Jiahui Chen*
 
 **My Maps** 
