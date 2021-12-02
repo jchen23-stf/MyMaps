@@ -13,6 +13,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import edu.stanford.jchen23.mymaps.model.Place
 import edu.stanford.jchen23.mymaps.model.UserMap
 import java.io.*
@@ -24,13 +25,15 @@ private const val REQUEST_CODE = 1234
 private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var fabCreateMap: FloatingActionButton
     private lateinit var rvMaps: RecyclerView
     private lateinit var userMaps: MutableList<UserMap>
     private lateinit var mapAdapter: MapsAdapter
-    override fun onCreate(savedInstanceState: Bundle?) {
-        rvMaps = findViewById(R.id.rvMaps)
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        fabCreateMap = findViewById(R.id.button)
+        rvMaps = findViewById(R.id.rvMaps)
 
         val userMapsFromFile = deserializeUserMaps(this)
         userMaps = deserializeUserMaps(this).toMutableList()
@@ -68,7 +71,6 @@ class MainActivity : AppCompatActivity() {
         fabCreateMap.setOnClickListener {
             Log.i(TAG, "Tap on FAB")
             val intent = Intent(this@MainActivity, CreateMapsActivity::class.java)
-            intent.putExtra(EXTRA_USER_MAP, userMaps[position])
             startActivityForResult(intent, REQUEST_CODE)
         }
     }
@@ -90,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             // Navigate to create map activity
-            val intent = Intent(this@MainActivity, CreateMapActivity::class.java)
+            val intent = Intent(this@MainActivity, CreateMapsActivity::class.java)
             intent.putExtra(EXTRA_MAP_TITLE, title)
             startActivityForResult(intent, REQUEST_CODE)
             dialog.dismiss()
