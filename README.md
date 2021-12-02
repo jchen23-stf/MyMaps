@@ -26,7 +26,7 @@ The following **extensions** are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://camo.githubusercontent.com/b8b1413eba10a952acefd07c5a3fed2834395fc071793e1623eef3951f22fb2b/68747470733a2f2f6a2e676966732e636f6d2f6f567147474c2e676966' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
